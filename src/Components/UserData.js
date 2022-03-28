@@ -10,11 +10,12 @@ import {useEffect } from "react"
 import {fetchUser} from "../Redux/Action"
 export default function MediaCard() {
   const dispatch=useDispatch()
-const user=useSelector((state)=>state.users)
-console.log("useSelector====>",user)
+
 useEffect(()=>{
 dispatch(fetchUser())
 },[])
+const user=useSelector((state)=>state.user)
+console.log("useSelector====>",user)
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
