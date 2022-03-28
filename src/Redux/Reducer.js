@@ -7,24 +7,24 @@ const initialstate={
   error:""
 }
 
-export const userReducer = (state = initialState, action) => {
+export const userReducer = (state = initialstate, action) => {
   switch (action.payload) {
     case USER_REQUEST:
       return {
         ...state,
-        loading: true,
+        Loading: true,
       };
     case USER_SUCESS:
       return {
         ...state,
-        loading :false,
+        Loading :false,
         users:action.payload,
         error:""
       };
       case USER_ERROR:
       return{
         ...state,
-        loading:false,
+        Loading:false,
         users:[],
         error:action.payload
       }
