@@ -1,11 +1,10 @@
 import { USER_REQUEST, USER_SUCESS, USER_ERROR } from './Type';
 
-
-const initialstate={
-  Loading :true,
-  users:[],
-  error:""
-}
+const initialstate = {
+  Loading: true,
+  users: [],
+  error: '',
+};
 
 export const userReducer = (state = initialstate, action) => {
   switch (action.payload) {
@@ -17,17 +16,17 @@ export const userReducer = (state = initialstate, action) => {
     case USER_SUCESS:
       return {
         ...state,
-        Loading :false,
-        users:action.payload,
-        error:""
+        Loading: false,
+        users: action.payload,
+        error: '',
       };
-      case USER_ERROR:
-      return{
+    case USER_ERROR:
+      return {
         ...state,
-        Loading:false,
-        users:[],
-        error:action.payload
-      }
-      return state
+        Loading: false,
+        users: [],
+        error: action.payload,
+      };
+      return state;
   }
 };
